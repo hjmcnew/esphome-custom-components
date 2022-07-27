@@ -21,6 +21,7 @@ void SEN0395Component::update() {
 
 void SEN0395Component::loop() {
     int val = sensor.readPresenceDetection();
+    this->sensor->publish_state(var);
     ESP_LOGCONFIG(TAG, val)
 }
 

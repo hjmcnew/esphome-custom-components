@@ -5,7 +5,7 @@ from esphome.const import CONF_ID, ICON_EMPTY, UNIT_EMPTY
 
 DEPENDENCIES = ['uart']
 
-sens0395_ns = cg.esphome_ns.namespace('sen0395')
+sen0395_ns = cg.esphome_ns.namespace('sen0395')
 SEN0395Sensor = sen0395_ns.class_('SEN0395Sensor', cg.PollingComponent, uart.UARTDevice)
 
 CONFIG_SCHEMA = sensor.sensor_schema(UNIT_EMPTY, ICON_EMPTY, 1).extend({

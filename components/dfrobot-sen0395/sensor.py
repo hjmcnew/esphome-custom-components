@@ -6,10 +6,10 @@ from esphome.const import CONF_ID, ICON_EMPTY, UNIT_EMPTY
 DEPENDENCIES = ['uart']
 
 sen0395_ns = cg.esphome_ns.namespace('sen0395')
-SEN0395Sensor = sen0395_ns.class_('SEN0395Sensor', cg.PollingComponent, uart.UARTDevice)
+SEN0395Component = sen0395_ns.class_('SEN0395Component', cg.PollingComponent, uart.UARTDevice)
 
 CONFIG_SCHEMA = sensor.sensor_schema(UNIT_EMPTY, ICON_EMPTY, 1).extend({
-    cv.GenerateID(): cv.declare_id(SEN0395Sensor),
+    cv.GenerateID(): cv.declare_id(SEN0395Component),
 }).extend(cv.polling_component_schema('60s')).extend(uart.UART_DEVICE_SCHEMA)
 
 def to_code(config):
